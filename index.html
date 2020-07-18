@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+        <head>    
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" rel="stylesheet">  
+          <link href="https://use.fontawesome.com/releases/v5.10.1/bulma/0.7.5/css/all.css" rel="stylesheet">
+          <link href="datatables.bluma.min.css" rel="stylesheet">                                          
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script type="text/javascript" src="../spapp.js"></script>
+          <script type="text/javascript" src="repeatable.js"></script>
+          <script type="text/javascript" src="data/contact-data.js"></script>
+          <style> 
+            @import url(index.css);
+          </style>     
+                       </head>      
+        <body>                           
+                    <nav class="navbar" role="navigation" aria-label="main navigation">
+                          <div id="navbarBasic" class="navbar-menu">
+                          <div class="navbar-start">
+                              <a class="navbar-item">
+                                  <a href="index.html"> Home </a>
+                          </a>       
+                            <a class="navbar-item">
+                                    <a href="home.html"> Contact-details  </a>
+                            </a>     
+                             
+                            <a class="navbar-item">
+                                    <a href="contact.html">Contact  </a>
+                                  </a>        
+                                  <a class="navbar-item">
+                                        <a href="about.html">About  </a>
+                                      </a>  
+                                      <section id="Home" src="pages/contactdetail.htm"></section>
+                                      <section id="contact-details" src="pages/home.htm"></section>
+                                      <section id="Contact" src="pages/contact.htm"></section>
+                                      <section id="about" src="pages/about.htm" default></section>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      </nav> 
+            <script>
+          $('.table').DataTable();
+                   </script>  
+    <div class="container" style="margin-top: 20px"  >
+               <div class="container" style="margin-left: 1000px" > 
+                <input type="text" class="input is -rounded" id="search" onkeyup="myFunction()" placeholder="Search by name..." >     
+          </div>
+                       <table class="table" id="table" name="table" border="1%" width="100%">
+            <thead><tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>sex</th>
+              <th>country</th>
+            </tr>
+                     </thead>
+                             <tbody>
+              <tr>
+                  <td >Temesgen</td>
+                  <td>Tsegay</td>
+                  <td>male</td>
+                  <td>Eritrea</td>
+                </tr>
+                <tr>
+                    <td>Aman</td>
+                    <td>Issac</td>
+                    <td>male</td>
+                    <td>Eritrea</td>
+       `           </tr>
+                  <tr>
+                      <td>lisa</td>
+                      <td>connel</td>
+                      <td>female</td>
+                      <td>USA</td>
+                    </tr>
+                    <tr>
+                        <td>Podoliski</td>
+                        <td>lukas</td>
+                        <td>male</td>
+                        <td>Germany</td>
+                      </tr>
+                      <tr>
+                          <td>kultuma</td>
+                          <td>kenyata</td>
+                          <td>female</td>
+                          <td>Kenya</td>
+                        </tr>
+                        <tr>
+                            <td>fantahun</td>
+                            <td>asmaw</td>
+                            <td>male</td>
+                            <td>Ethiopia</td>
+                          </tr>
+                          <tr>
+                            <td>haben</td>
+                            <td>Grmay</td>
+                            <td>male</td>
+                            <td>Eritrea</td>
+                          </tr>
+                          <tr>
+                            <td>Saron</td>
+                            <td>Rezene</td>
+                            <td>Female</td>
+                            <td>Eritrea</td>
+                          </tr>
+           </tbody>
+        </table>
+        </div>   
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.datatables.min.js" ></script>                    
+                <script src="/js/dataTables.bulma.min.js"></script>
+                <script src="/js/jquery-3.1.1.min.js"></script>
+                <script src="/js/jquery.dataTables.min.js"></script>
+                
+                <script>
+             function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+                  </script>
+      </body>
+      </html>

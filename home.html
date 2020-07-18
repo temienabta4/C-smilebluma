@@ -1,0 +1,37 @@
+<html>
+<h1>Contact Details</h1>
+<div><label >First name :</label> <input type="text" class="input is-primary" name="input is-primary" id = "firstName"></div>
+<div><label>Last name :</label> <input type="text" class="input is-primary" name="input is-primary" style="margin-left: 1px"></div> 
+<div><label >sex      :</label> <input type="text" class="input is-primary" name="input is-primary" style="margin-left: 46px"></div>
+<div><label >country  :</label> <input type="text" class="input is-primary" name="input is-primary" style="margin-left: 19px"></div>
+<div style="margin-left: 60px"><button class="button is-primary" onclick="myfunc()" id="btnSaver"> SAVE </button> </div>
+
+ <script>
+
+  window.app.page("#home", function() // registering the controller
+{          
+var $firstName = $(this).find('[name="firstName"]');
+var $lastName = $(this).find('[name="lastName"]');
+var $sex = $(this).find('[name="sex"]');
+var $country = $(this).find('[name="country"]');
+var contactId; // current id of presented contact 
+var contact = null; // current contact
+   // present the view - load data and show: 
+return function(params) {
+ var contactId = params; 
+ contact = contacts[contactId];
+// show values 
+$firstName.val(contact.firstName);
+$lastName.val(contact.lastName);
+$sex.val(contact.sex);
+$country.val(contact.country);
+                      }
+}); 
+</script>
+<script type="text/javascript">
+  function myfunc() {
+      var input = document.getElementById('firstName');
+      alert(input.value + "   " + "is saved successfully");
+  } 
+</script>
+             </html>
